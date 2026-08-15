@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="触碰此刻，重逢美好。" />
+    <meta name="theme-color" content="#f5f0e8" />
+    <title>一百天纪念日</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="memory-page">
+      <div class="ambient ambient-one" aria-hidden="true"></div>
+      <div class="ambient ambient-two" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <div class="brand-lockup">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span id="jnr_time">TODO = 初始文字</span>
+        </div>
+        <span class="year-pill">NFC · 2026</span>
+      </header>
+
+      <section class="hero" aria-labelledby="memory-title">
+        <figure class="photo-card">
+          <a
+            class="photo-link"
+            href="./memory-photo.png"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="在新窗口查看照片原图"
+          >
+            <img
+              src="./memory-photo.png"
+              width="1450"
+              height="1086"
+              alt="阳光草地上，一对年轻人与玩偶熊的合影"
+            />
+            <span class="view-original">轻触查看原图&nbsp; ↗</span>
+          </a>
+          <figcaption>
+            <span>OUR MEMORY</span>
+            <span>01 / FOREVER</span>
+          </figcaption>
+        </figure>
+
+        <div class="story">
+          <p class="eyebrow">TO THE MOMENT WE KEEP</p>
+          <h1 id="memory-title">有些瞬间，值得被一直记住。</h1>
+          <span class="story-rule" aria-hidden="true"></span>
+          <p class="note">
+            当手机靠近那块小小的电路板，这张照片便再次亮起。愿每一次触碰，都让这一刻重新鲜活。
+          </p>
+          <p class="signature">— 留给我们的纪念</p>
+        </div>
+      </section>
+
+      <footer>
+        <span>MADE TO BE REMEMBERED</span>
+        <span class="footer-divider" aria-hidden="true">·</span>
+        <span>触碰此刻，重逢美好</span>
+      </footer>
+    </main>
+    <script>
+      const pre_str = "TODO=我们已经做了";
+      const startTime = new Date("2026-05-16");
+      const jnr_title = document.getElementById("jnr_time");
+      var time_gap;
+      // jnr_title.textContent = "nmm";
+      setInterval(() => {
+        const now = new Date();
+        console.log(now);
+        time_gap = now.getTime() - startTime.getTime();
+        const display_srt_format = `${pre_str} ${Math.floor(time_gap / 86400000)}天 ${Math.floor((time_gap / 3600 / 1000) % 24)}时 ${Math.floor((time_gap / 60 / 1000) % 60)}分 ${Math.floor((time_gap / 1000) % 60)}秒`;
+        jnr_title.textContent = display_srt_format;
+      }, 1000);
+    </script>
+  </body>
+</html>
