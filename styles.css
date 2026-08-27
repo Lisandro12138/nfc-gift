@@ -516,7 +516,7 @@ footer {
   flex: none;
   padding-top: 18px;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 50px;
+  font-size: 40px;
 }
 .footer-divider {
   color: var(--accent);
